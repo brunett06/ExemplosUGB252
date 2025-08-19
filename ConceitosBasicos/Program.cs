@@ -1,4 +1,5 @@
-﻿try
+﻿/*
+try
 {
     Console.WriteLine("Informe seu nome: ");
     string nome = Console.ReadLine();
@@ -29,7 +30,7 @@ catch (Exception e)
     Console.WriteLine("Ocorreu um erro. Contate o suporte técnico.");
     Console.WriteLine(e.StackTrace);
 }
-
+*/
 //if (salario <= 2259.20m)
 //{
 //    Console.WriteLine("Isento");
@@ -52,3 +53,12 @@ catch (Exception e)
 //}
 //informe o valor do IRPF a ser pago de acordo com o salário informado. Utilize a tabela real de desconto de IRPF
 
+using ConceitosBasicos.uteis;
+
+SomaDoisNumeros somaDoisNumeros = new SomaDoisNumeros();
+int resultado = somaDoisNumeros.Somar(20, 22);
+Console.WriteLine(resultado);
+
+MetrosMilimetros metrosMilimetros = new MetrosMilimetros();
+int milimetros = MetrosMilimetros.Converter(50);
+Console.WriteLine(milimetros);
