@@ -3,24 +3,40 @@ string nome = Console.ReadLine();
 Console.WriteLine("Informe seu salário: ");
 decimal salario = decimal.Parse(Console.ReadLine());
 Console.WriteLine("Seja bem-vinda(o), {0} o seu salário é {1}.",nome,salario);
-if (salario <= 26963.20m)
-{
-    Console.WriteLine("Isento");
-}
-else if (salario >= 26963.21m && salario <= 33919.80m)
-{
-    Console.WriteLine($"O seu salário atual é {salario - salario * 0.075m}");
-}
-else if (salario >= 33919.81m && salario <= 45012.60m)
-{
-    Console.WriteLine($"O seu salário atual é {salario - salario * 0.15m}");
-}
-else if (salario >= 45012.61m && salario <= 55976.16m)
-{
-    Console.WriteLine($"O seu salário atual é {salario - salario * 0.225m}");
-}
-else
-{
-    Console.WriteLine($"O seu salário atual é {salario - salario * 0.275m}");
-}
+
+
+//if (salario <= 2259.20m)
+//{
+//    Console.WriteLine("Isento");
+//}
+//else if (salario >= 2259.21m && salario <= 2826.65m)
+//{
+//    Console.WriteLine($"O seu salário atual é {salario - salario * 0.075m - 169.21m}");
+//}
+//else if (salario >= 2826.66m && salario <= 3751.05m)
+//{
+//    Console.WriteLine($"O seu salário atual é {salario - salario * 0.15m - 381.44m}");
+//}
+//else if (salario >= 3751.06m && salario <= 4664.68m - 662.77m)
+//{
+//    Console.WriteLine($"O seu salário atual é {salario - salario * 0.225m - 662.77m}");
+//}
+//else
+//{
+//    Console.WriteLine($"O seu salário atual é {salario - salario * 0.275m - 896m}");
+//}
 //informe o valor do IRPF a ser pago de acordo com o salário informado. Utilize a tabela real de desconto de IRPF
+
+decimal irpfDevido;
+if (salario <= 2259.20m)
+    irpfDevido = 0;
+else if (salario <= 2826.65m)
+    irpfDevido = salario * 0.075m - 169.21m;
+else if (salario <= 3751.05m)
+    irpfDevido = salario * 0.15m - 381.44m;
+else if (salario <= 4664.68m)
+    irpfDevido = salario * 0.225m - 662.77m;
+else
+    irpfDevido = salario * 0.275m - 896m;
+
+Console.WriteLine($"Para o salário de {salario} o valor a ser pago de IRPF é {irpfDevido}, então o slário com desconto de IRPF será {salario - irpfDevido}.");
