@@ -53,6 +53,7 @@ catch (Exception e)
 //}
 //informe o valor do IRPF a ser pago de acordo com o salário informado. Utilize a tabela real de desconto de IRPF
 
+
 using ConceitosBasicos.uteis;
 
 SomaDoisNumeros somaDoisNumeros = new SomaDoisNumeros();
@@ -62,3 +63,13 @@ Console.WriteLine(resultado);
 MetrosMilimetros metrosMilimetros = new MetrosMilimetros();
 int milimetros = MetrosMilimetros.Converter(50);
 Console.WriteLine(milimetros);
+
+CalculaAumento calculaAumento = new CalculaAumento();
+Console.WriteLine("Informe o salário: ");
+decimal salario = Convert.ToDecimal(Console.ReadLine());
+Console.WriteLine("Informe o percentual de aumento: ");
+float percentual = float.Parse(Console.ReadLine());
+decimal percentualAumento = calculaAumento.Calcular(salario, percentual);
+Console.WriteLine($"Para o salário {salario:c2}, o aumento de {percentual}% corresponde a {percentualAumento}");
+Console.WriteLine($"O novo salário é {salario + percentualAumento}");
+
