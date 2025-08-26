@@ -56,20 +56,40 @@ catch (Exception e)
 
 using ConceitosBasicos.uteis;
 
-SomaDoisNumeros somaDoisNumeros = new SomaDoisNumeros();
-int resultado = somaDoisNumeros.Somar(20, 22);
-Console.WriteLine(resultado);
 
-MetrosMilimetros metrosMilimetros = new MetrosMilimetros();
-int milimetros = MetrosMilimetros.Converter(50);
-Console.WriteLine(milimetros);
+Console.WriteLine("Escolha o que você deseja fazer?");
+Console.WriteLine("1- Soma Dois Números /n 2- Metros Metros /n 3-Calcula Aumento");
+int opcao = int.Parse(Console.ReadLine());
 
-CalculaAumento calculaAumento = new CalculaAumento();
-Console.WriteLine("Informe o salário: ");
-decimal salario = Convert.ToDecimal(Console.ReadLine());
-Console.WriteLine("Informe o percentual de aumento: ");
-float percentual = float.Parse(Console.ReadLine());
-decimal percentualAumento = calculaAumento.Calcular(salario, percentual);
-Console.WriteLine($"Para o salário {salario:c2}, o aumento de {percentual}% corresponde a {percentualAumento}");
-Console.WriteLine($"O novo salário é {salario + percentualAumento}");
+switch (opcao)
+{
+    case 1:
+        SomaDoisNumeros somaDoisNumeros = new SomaDoisNumeros();
+        Console.WriteLine("Informe o primeiro número: ");
+        int n1 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Informe o segundo número: ");
+        int n2 = int.Parse(Console.ReadLine());
+        int resultado = somaDoisNumeros.Somar(n1, n2);
+        Console.WriteLine(resultado);
+        break;
+    case 2:
+        MetrosMilimetros metrosMilimetros = new MetrosMilimetros();
+        int milimetros = MetrosMilimetros.Converter(50);
+        Console.WriteLine(milimetros);
+        break;
+    case 3:
+        CalculaAumento calculaAumento = new CalculaAumento();
+        Console.WriteLine("Informe o salário: ");
+        decimal salario = Convert.ToDecimal(Console.ReadLine());
+        Console.WriteLine("Informe o percentual de aumento: ");
+        float percentual = float.Parse(Console.ReadLine());
+        decimal percentualAumento = calculaAumento.Calcular(salario, percentual);
+        Console.WriteLine($"Para o salário {salario:c2}, o aumento de {percentual}% corresponde a {percentualAumento}");
+        Console.WriteLine($"O novo salário é {salario + percentualAumento}");
+        break;
+    default:
+        Console.WriteLine("Opção inválida.");
+        break;
+}
+
 
